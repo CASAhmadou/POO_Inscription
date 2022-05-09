@@ -1,0 +1,38 @@
+MLD
+Heritage
+
+SingleTable:
+personne(id,nom_complet,role,login,password,grade,matricule,adresse,sexe)
+
+Joined:
+personne(id,nom_complet,role)
+user(login,password,#personne_id)
+rpd(#personne_id)
+attache(#personne_id)
+etudiant(matricule,adresse,sexe,#personne_id)
+professeur(grade,#personne_id)
+
+OneToMany->ManyToOne
+1->* //OneToMany
+*->1 //ManyToOne
+MLD=> cle du faible migre vers le fort
+annee_scolaire(id,libelle,etat)
+inscription(id,etat,#annee_scolaire_id,#personne_id{#attache_id,#etudiant_id},#classe_id,#annee_scolaire_id,#demande_id)
+demande(id,motif,etat,date,#personne_id{etudiant_id,rpd_id})
+classe(#personne_id{rpd_id})
+module(id,nom_module,#personne_id{rpd_id})
+
+ManyToMany->ManyToOne =>
+classe(id,libelle,niveau,filliere)
+professeur_classe(#classe_id,#personne_id)
+
+//Type Requete
+
+//Requete de mise à jour => change etat de la table
+=>return un entier=>nbr ligne modifie
+insert()
+delete()
+update()
+
+//return des donnees=>Objet,tableau
+select()
