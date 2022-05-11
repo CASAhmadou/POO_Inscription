@@ -10,13 +10,20 @@ class AttacheClasse extends User{
     public function __construct()
     {
         self::$role=Constantes::ROLE_ATTACHE;
-        //$this->inscriptions=[];    
+        $this->inscriptions=[];    
     }
 
     //OneToMany
     //function navigationnel(2eme approche)
     public function inscriptions():array
     {
+        return [];
+    }
+
+    //Redefinition
+    public static function findAll():array{
+        $sql="select * from ".parent::table()." where role like '".self::$role."'";
+        echo $sql;
         return [];
     }
 }

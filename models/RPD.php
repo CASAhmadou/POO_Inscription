@@ -8,4 +8,11 @@ class RPD extends user{
     {
         self::$role=Constantes::ROLE_RPD;
     }
+
+    //Redefinition
+    public static function findAll():array{
+        $sql="select * from ".parent::table()." where role like '".self::$role."'";
+        echo $sql;
+        return [];
+    }
 }

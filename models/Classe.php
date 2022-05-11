@@ -10,7 +10,7 @@ class Classe extends Model{
 
     public function __construct()
     {
-        self::$table='classe';
+        
     }
 
     public function professeurs():array{

@@ -7,21 +7,24 @@ class Professeur extends Personne{
 
     public function __construct()
     {
-        self::$role=Constantes::ROLE_PROFESSEUR;
+        $this->role=Constantes::ROLE_PROFESSEUR;
     }
 
     //ManyToMany avec Classe
     public function classes():array{
         return [];
     }
+   
+    //Redefinition
+    public static function findAll():array{
+        $sql="select * from ".parent::table()." where role like '".self::$role."'";
+        echo $sql;
+        return [];
+    }
 
 
-    //insert
-    //delete
-    //update
+
     
-    //selectALL()
-    //seleectById
 
 
     /**

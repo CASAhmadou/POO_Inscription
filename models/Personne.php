@@ -18,15 +18,13 @@ abstract class Personne extends Model{
     //Méthode constructer
     public function __construct()
     {
-        self::$table='personne';
+        
     }
 
-    //Redefinition
-    public static function findAll():array{
-        $sql="select * from personne where role like '".self::$role."'";
-        return [];
-    }
+  
     
+
+
     /**
      * Get the value of id
      */ 

@@ -8,14 +8,14 @@ class Inscription extends Model{
 
     public function __construct()
     {
-        self::$table='inscription';
+
     }
 
     //ManyToOne function navigationnel
     public function AttacheClasse():AttacheClasse
     {
-       $sql="select p.* from inscription i,personne p 
-                where p.id=i.personne_id 
+       $sql="select p.* from ".parent::table()." i,personne p 
+                where p.id=i.ac_id; 
                 and p.role like 'ROLE_ATTACHE'
                 and i.id=".$this->id;
         return new AttacheClasse();
@@ -23,7 +23,7 @@ class Inscription extends Model{
     
     public function AnneeScolaire():AnneeScolaire
     {
-        $sql="select a.* from inscription i,annee_scolaire a 
+        $sql="select a.* from ".parent::table()." i,annee_scolaire a 
                 where a.id=i.annee_scolaire_id
                 and i.id=".$this->id;
         return new AnneeScolaire();

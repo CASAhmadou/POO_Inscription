@@ -1,0 +1,20 @@
+{
+    "name": "cas/poo_inscription",
+    "autoload": {
+        "psr-4": {
+            "Cas\\Core\\": "core/",
+            "Cas\\Models\\": "models/",
+            "Cas\\Config\\": "config/",
+            "Cas\\Controllers\\": "controllers/"
+        }
+    },
+    "authors": [
+        {
+            "name": "CASAhmadou",
+            "email": "amalasakho92@gmail.com"
+        }
+    ],
+    "require": {
+        
+    }
+}
