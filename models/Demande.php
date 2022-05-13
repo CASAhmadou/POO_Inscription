@@ -1,5 +1,5 @@
 <?php
-namespace Cas\Models;
+namespace App\Model;
 
 class Demande{
     private int $id;

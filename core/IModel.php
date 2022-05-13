@@ -1,5 +1,5 @@
 <?php
-namespace Cas\Core;
+namespace App\Core;
 
 interface IModel{
 

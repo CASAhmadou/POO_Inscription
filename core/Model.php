@@ -1,13 +1,17 @@
 <?php
-namespace Cas\Core;
+namespace App\Core;
 
 
 abstract class Model implements IModel{
 
+    protected static function dataBase():DataBase{
+        return new DataBase();
+    } 
+
     public static function table():string{
         $table=get_called_class();
-        $table=str_replace("Cas\\Models\\","",$table);
-        $table= ($table=="User" or $table=="AttacheClasse" or $table=="RPD")?"personne":strtolower($table);
+        $table=str_replace("App\\Model\\","",$table);
+        $table= ($table=="User" or $table=="AttacheClasse" or $table=="RPD" or $table=="Professeur")?"personne":strtolower($table);
         return $table;
     }
 
@@ -23,22 +27,38 @@ abstract class Model implements IModel{
         return 0;
     }
     public static function delete(int $id):int{
-        $sql="delete from ".self::table()." where id=$id";
-        echo $sql;
-        return 0;
+        $db=self::dataBase();
+        $db->connexionDB();
+            $sql="delete from ".self::table()." where id=?";
+            $result=$db->executeUpdate($sql,[$id]);
+        $db->closeConnexion();
+      
+        return $result;
     }
     public static function findAll():array{
-        $sql="select * from '".self::table()."'";
-        echo $sql;
-        return [];
+        $db=self::dataBase();
+        $db->connexionDB();
+            $sql="select * from ".self::table();
+        $result=$db->executeSelect($sql);
+        $db->closeConnexion();
+
+        return $result;
     }
     public static function findById(int $id):object|null{
-        $sql="select * from '".self::table()."'where id=$id";
-        echo $sql;
-        return null;
+        $db=self::dataBase();
+        $db->connexionDB();
+            $sql="select * from '.self::table().'where id=?";
+        $result=$db->executeSelect($sql,[$id]);
+        $db->closeConnexion();
+
+        return $result;
     }
     public static function findBy(string $sql,array $data=null,$single=false):object|null|array{
-        return [];
+        $db=self::dataBase();
+        $db->connexionDB();
+        $result=$db->executeSelect($sql,$data,$single=false);
+        $db->closeConnexion();
+        return $result;
     }
 
 }

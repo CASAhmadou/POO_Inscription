@@ -1,6 +1,6 @@
 <?php
-namespace Cas\Models;
-use Cas\Core\Model;
+namespace App\Model;
+use App\Core\Model;
 
 class Inscription extends Model{
     private int $id;

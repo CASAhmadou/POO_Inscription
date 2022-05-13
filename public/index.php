@@ -2,19 +2,22 @@
 require("../vendor/autoload.php");
 
 //Autoload(inclure les fichiers)
-use Cas\Core\IModel;
-use Cas\Core\Model;
-use Cas\Models\Personne;
-use Cas\Models\User;
-use Cas\Models\AttacheClasse;
-use Cas\Models\Classe;
-use Cas\Config\Constantes;
-use Cas\Models\AnneeScolaire;
-use Cas\Models\Module;
-use Cas\Models\RPD;
-use Cas\Models\Etudiant;
-use Cas\Models\Inscription;
+use App\Core\IModel;
+use App\Core\Model;
+use App\Model\Personne;
+use App\Model\User;
+use App\Model\AttacheClasse;
+use App\Model\Classe;
+use App\Confi\Constantes;
+use App\Model\AnneeScolaire;
+use App\Model\Module;
+use App\Model\RPD;
+use App\Model\Etudiant;
+use App\Model\Inscription;
+use App\Model\Professeur;
 
+$prof=new Professeur();
+$prof->setNomComplet("Cheikhna Ahmadou Sakho");
+$prof->setGrade("Ingénieur");
+$prof->insert();
 
-echo Personne::table();
-echo User::table();

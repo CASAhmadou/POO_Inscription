@@ -1,6 +1,6 @@
 <?php
-namespace Cas\Models;
-use Cas\Core\Model;
+namespace App\Model;
+use App\Core\Model;
 
 //Classe conctrete
 abstract class Personne extends Model{

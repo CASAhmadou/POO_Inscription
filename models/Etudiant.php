@@ -1,6 +1,6 @@
 <?php
-namespace Cas\Models;
-use Cas\Config\Constantes;
+namespace App\Model;
+use App\Config\Constantes;
 
 class Etudiant extends User{
     private string $matricule;

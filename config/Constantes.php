@@ -1,5 +1,5 @@
 <?php
-namespace Cas\Config;
+namespace App\Config;
 
 class Constantes{
     public const ROLE_RPD = "ROLE_RPD";

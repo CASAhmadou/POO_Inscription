@@ -1,5 +1,5 @@
 <?php
-namespace Cas\Models;
+namespace App\Model;
 
 abstract class User extends Personne{
     protected string $login;

@@ -1,6 +1,6 @@
 <?php
-namespace Cas\Models;
-use Cas\Config\Constantes;
+namespace App\Model;
+use App\Config\Constantes;
 
 class AttacheClasse extends User{
 
@@ -9,7 +9,7 @@ class AttacheClasse extends User{
 
     public function __construct()
     {
-        self::$role=Constantes::ROLE_ATTACHE;
+        parent::$role=Constantes::ROLE_ATTACHE;
         $this->inscriptions=[];    
     }
 
@@ -22,7 +22,7 @@ class AttacheClasse extends User{
 
     //Redefinition
     public static function findAll():array{
-        $sql="select * from ".parent::table()." where role like '".self::$role."'";
+        $sql="select * from ".parent::table()." where role like ROLE_ATTACHE";
         echo $sql;
         return [];
     }

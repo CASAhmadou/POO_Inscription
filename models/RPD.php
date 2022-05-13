@@ -1,6 +1,6 @@
 <?php
-namespace Cas\Models;
-use Cas\Config\Constantes;
+namespace App\Model;
+use App\Config\Constantes;
 
 class RPD extends user{
 
@@ -14,5 +14,14 @@ class RPD extends user{
         $sql="select * from ".parent::table()." where role like '".self::$role."'";
         echo $sql;
         return [];
+    }
+
+    public function insert():int{
+        $db=parent::dataBase();
+        $db->connexionDB();
+            $sql="INSERT INTO `personne` (`login`,`password`,`role`) VALUES (?,?,?)";
+            $result=$db->executeUpdate($sql,[$this->login,$this->password,parent::$role]);
+        $db->closeConnexion();
+        return $result;
     }
 }

@@ -1,13 +1,13 @@
 <?php
-namespace Cas\Models;
-use Cas\Config\Constantes;
+namespace App\Model;
+use App\Config\Constantes;
 
 class Professeur extends Personne{
     private string $grade;
 
     public function __construct()
     {
-        $this->role=Constantes::ROLE_PROFESSEUR;
+        parent::$role=Constantes::ROLE_PROFESSEUR;
     }
 
     //ManyToMany avec Classe
@@ -17,12 +17,19 @@ class Professeur extends Personne{
    
     //Redefinition
     public static function findAll():array{
-        $sql="select * from ".parent::table()." where role like '".self::$role."'";
+        $sql="select * from ".parent::table()." where role like ROLE_PROFESSEUR";
         echo $sql;
         return [];
     }
 
-
+    public function insert():int{
+        $db=parent::dataBase();
+        $db->connexionDB();
+            $sql="INSERT INTO `personne` (`nom_complet`,`grade`,`role`) VALUES (?,?,?)";
+            $result=$db->executeUpdate($sql,[$this->nomComplet, parent::$role,$this->grade]);
+        $db->closeConnexion();
+        return $result;
+    }
 
     
 
