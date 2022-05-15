@@ -1,6 +1,8 @@
 <?php
 namespace App\Controller;
 
-class EtudiantController{
+use App\Core\Controller;
+
+class EtudiantController extends Controller{
     
 }

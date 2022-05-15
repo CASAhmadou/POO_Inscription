@@ -1,6 +1,8 @@
 <?php
 namespace App\Controller;
 
-class InscriptionController{
+use App\Core\Controller;
+
+class InscriptionController extends Controller{
     
 }

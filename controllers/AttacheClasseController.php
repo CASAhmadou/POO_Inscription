@@ -1,6 +1,8 @@
 <?php
 namespace App\Controller;
 
-class AttacheClasseController{
+use App\Core\Controller;
+
+class AttacheClasseController extends Controller{
     
 }

@@ -21,8 +21,12 @@ class Router{
         if(isset($this->routes[$uri])){
             $route=$this->routes[$uri];
             [$ctrClass,$action]=$route;
-            if (class_exists($ctrClass)) {
-                dd("classe existe");
+            if (class_exists($ctrClass) && method_exists($ctrClass,$action)) {
+                //dd("classe existe");
+                $ctrl=new $ctrClass($this->request);
+                $ctrl->$action();
+                //Autre Methode
+                //call_user_func(array($ctrl,$action));
             }else{
                 throw new RouteNotFoundException();
             }

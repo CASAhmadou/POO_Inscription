@@ -1,6 +1,8 @@
 <?php
 namespace App\Controller;
 
-class RPDController{
+use App\Core\Controller;
+
+class RPDController extends Controller{
     
 }

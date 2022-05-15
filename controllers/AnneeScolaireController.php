@@ -1,6 +1,8 @@
 <?php
 namespace App\Controller;
 
-class AnneScolaireController{
+use App\Core\Controller;
+
+class AnneScolaireController extends Controller{
     
 }

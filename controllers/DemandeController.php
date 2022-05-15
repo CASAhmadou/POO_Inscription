@@ -1,6 +1,8 @@
 <?php
 namespace App\Controller;
 
-class DemandeController{
+use App\Core\Controller;
+
+class DemandeController extends Controller{
     
 }

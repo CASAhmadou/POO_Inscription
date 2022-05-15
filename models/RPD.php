@@ -1,6 +1,6 @@
 <?php
 namespace App\Model;
-use App\Config\Constantes;
+use App\Core\Constantes;
 
 class RPD extends user{
 
