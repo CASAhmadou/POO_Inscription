@@ -12,21 +12,20 @@ class Inscription extends Model{
     }
 
     //ManyToOne function navigationnel
-    public function AttacheClasse():AttacheClasse
-    {
+    public function AttacheClasse():AttacheClasse{
        $sql="select p.* from ".parent::table()." i,personne p 
                 where p.id=i.ac_id; 
                 and p.role like 'ROLE_ATTACHE'
-                and i.id=".$this->id;
-        return new AttacheClasse();
+                and i.id=?";
+            return parent::findBy($sql,[$this->id]);
     }
     
     public function AnneeScolaire():AnneeScolaire
     {
         $sql="select a.* from ".parent::table()." i,annee_scolaire a 
                 where a.id=i.annee_scolaire_id
-                and i.id=".$this->id;
-        return new AnneeScolaire();
+                and i.id=?";
+        return parent::findBy($sql,[$this->id]);
     }
 
     public function Etudiant():Etudiant{

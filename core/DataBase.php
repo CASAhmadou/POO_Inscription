@@ -5,7 +5,7 @@ class DataBase{
     private \PDO|null $pdo=null;
 
     public function connexionDB():void{
-        $this->pdo=new \PDO("mysql:dbname=gestion_inscription;host=127.0.0.1","root","");
+        $this->pdo=new \PDO("mysql:dbname=gestion_inscription;host=127.0.0.1","castp5","castp5");
         //die("Ca marche");
     }
     public function closeConnexion():void{
@@ -15,9 +15,10 @@ class DataBase{
         $query=$this->pdo->prepare($sql);
         $query->execute($data);
         if($single){
-            $result=$query->fetch();
+            $result=$query->fetch(\PDO::FETCH_OBJ);
+            if($query->rowCount()==0) return null;
         }else {
-            $result=$query->fetchAll();
+            $result=$query->fetchAll(\PDO::FETCH_OBJ);
         }
         return $result;
     }

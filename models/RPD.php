@@ -11,9 +11,8 @@ class RPD extends user{
 
     //Redefinition
     public static function findAll():array{
-        $sql="select * from ".parent::table()." where role like '".self::$role."'";
-        echo $sql;
-        return [];
+        $sql="select * from ".parent::table()." where role like ?";
+        return parent::findBy($sql,['.self::$role.'],true);
     }
 
     public function insert():int{

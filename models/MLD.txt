@@ -64,3 +64,55 @@ $insc1->AnneeScolaire();
 
 AttacheClasse::findAll();//pour afficher tous les attacheclasses
 Personne::findAll();//toutes les personnes
+
+
+$userConnect=User::findUserByLoginAndPassword("ac","ac");
+dd($userConnect);
+
+// $prof=new Professeur();
+// $prof->setNomComplet("Moustapha Ndiaye");
+// $prof->setGrade("Ingenieur");
+// $prof->insert();
+
+/*$profs=Professeur::findAll();
+echo "<pre>";
+ var_dump($profs);
+echo "</pre>";
+die();*/
+
+
+
+//Autoload(inclure les fichiers)
+use App\Config\Constantes;
+use App\Controller\SecurityController;
+use App\Core\IModel;
+use App\Core\Model;
+use App\Core\Request;
+use App\Core\Router;
+use App\Exception\RouteNotFoundException;
+use App\Model\Personne;
+use App\Model\User;
+use App\Model\AttacheClasse;
+use App\Model\Classe;
+use App\Model\AnneeScolaire;
+use App\Model\Module;
+use App\Model\RPD;
+use App\Model\Etudiant;
+use App\Model\Inscription; 
+use App\Model\Professeur;
+
+
+
+/*$ac=new AttacheClasse();
+$ac->setNomComplet("C A S");
+$ac->setLogin("ac");
+$ac->setPassword("ac");
+$ac->insert();*/
+
+//$users=User::findAll();
+
+
+$request=new Request();
+$request->getUri();
+//dd($request->isGet());
+dd($request->isPost());

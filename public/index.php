@@ -1,23 +1,8 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 require("../vendor/autoload.php");
-
-//Autoload(inclure les fichiers)
-use App\Core\IModel;
-use App\Core\Model;
-use App\Model\Personne;
-use App\Model\User;
-use App\Model\AttacheClasse;
-use App\Model\Classe;
-use App\Confi\Constantes;
-use App\Model\AnneeScolaire;
-use App\Model\Module;
-use App\Model\RPD;
-use App\Model\Etudiant;
-use App\Model\Inscription;
-use App\Model\Professeur;
-
-$prof=new Professeur();
-$prof->setNomComplet("Cheikhna Ahmadou Sakho");
-$prof->setGrade("Ingénieur");
-$prof->insert();
-
+require_once("../core/Functions.php");
+require_once("../core/Functions.php");
+require_once("../routes/Route.web.php");

@@ -17,16 +17,17 @@ class Professeur extends Personne{
    
     //Redefinition
     public static function findAll():array{
-        $sql="select * from ".parent::table()." where role like ROLE_PROFESSEUR";
-        echo $sql;
-        return [];
+        
+            $sql="select id, `nom_complet`,`grade`,`role` from ? where role like 'ROLE_PROFESSEUR'";
+            return parent::findBy($sql,[parent::table()]);
     }
 
     public function insert():int{
         $db=parent::dataBase();
         $db->connexionDB();
             $sql="INSERT INTO `personne` (`nom_complet`,`grade`,`role`) VALUES (?,?,?)";
-            $result=$db->executeUpdate($sql,[$this->nomComplet, parent::$role,$this->grade]);
+            //die("Ca marche");
+            $result=$db->executeUpdate($sql,[$this->nomComplet, $this->grade, parent::$role]);
         $db->closeConnexion();
         return $result;
     }

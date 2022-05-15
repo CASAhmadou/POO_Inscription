@@ -56,7 +56,7 @@ abstract class Model implements IModel{
     public static function findBy(string $sql,array $data=null,$single=false):object|null|array{
         $db=self::dataBase();
         $db->connexionDB();
-        $result=$db->executeSelect($sql,$data,$single=false);
+        $result=$db->executeSelect($sql,$data,$single);
         $db->closeConnexion();
         return $result;
     }

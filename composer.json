@@ -5,6 +5,7 @@
             "App\\Core\\": "core/",
             "App\\Config\\": "config/",
             "App\\Controller\\": "controllers/",
+            "App\\Exception\\": "exceptions",
             "App\\Model\\": "models/"
 
         }

@@ -13,8 +13,9 @@ class Classe extends Model{
         
     }
 
-    public function professeurs():array{
-        return [];
+    public function professeurs():array|null{
+        $sql="select...";
+        return parent::findBy($sql,[$this->id]);
     }
 
 
