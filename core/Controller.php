@@ -18,7 +18,7 @@ class Controller{
         extract($data);
         require_once(Constantes::ROOT()."templates/".$path);
         $content_for_views=ob_get_clean();
-        require_once(Constantes::ROOT()."templates/layout/base..html.php");
+        require_once(Constantes::ROOT()."templates/layout/base.html.php");
 
     }
 
