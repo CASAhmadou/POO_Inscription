@@ -12,9 +12,18 @@ class Etudiant extends User{
 
     //Redefinition
     public static function findAll():array{
-        $sql="select * from ".parent::table()." where role like '".self::$role."'";
-        echo $sql;
-        return [];
+        $sql="select * from ".parent::table()." where role like ?";
+        return parent::findBy($sql,[self::$role]);
+    }
+
+    public function insert():int{
+        $db=parent::dataBase();
+        $db->connexionDB();
+            $sql="INSERT INTO `personne` (`matricule`,`nom_complet`,`login`,`password`,`adresse`,`sexe`,`role`) VALUES (?,?,?,?,?,?,?)";
+            //die("Ca marche");
+            $result=$db->executeUpdate($sql,[$this->matricule, $this->nomComplet, $this->login,$this->password,$this->adresse,$this->sexe, parent::$role]);
+        $db->closeConnexion();
+        return $result;
     }
 
 

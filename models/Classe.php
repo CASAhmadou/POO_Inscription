@@ -13,9 +13,24 @@ class Classe extends Model{
         
     }
 
+    public static function findAll():array{      
+        $sql="select * from classe";
+        return parent::findBy($sql,[]);
+    }
+
     public function professeurs():array|null{
         $sql="select...";
         return parent::findBy($sql,[$this->id]);
+    }
+
+    public function insert():int{
+        $db=parent::dataBase();
+        $db->connexionDB();
+            $sql="INSERT INTO `classe` (`libelle`,`niveau`,`filliere`,`rpd_id`) VALUES (?,?,?,?)";
+            //die("Ca marche");
+            $result=$db->executeUpdate($sql,[$this->libelle, $this->niveau,$this->filliere,$this->rpd_id]);
+        $db->closeConnexion();
+        return $result;
     }
 
 

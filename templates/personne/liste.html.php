@@ -4,35 +4,37 @@
         <h4 class="card-title">Liste des Utilisateurs</h4>
         <p class="card-text">
         
-        <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Numéro</th>
+                <th scope="col">Nom Complet</th>
+                <th scope="col">Role</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Idrissa Cissé</td>
+                <td>RPD</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Habib Mbathie</td>
+                <td>AttacheClasse</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Moustaphe Gueye</td>
+                <td>Professeur</td>
+              </tr>
+              <tr>
+                <th scope="row">4</th>
+                <td>Binta Faye</td>
+                <td>Etudiante</td>
+              </tr>
+            </tbody>
+          </table>
 
         </p>
     </div>

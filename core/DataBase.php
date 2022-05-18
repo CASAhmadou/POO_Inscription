@@ -1,11 +1,21 @@
 <?php
 namespace App\Core;
+use PDO;
+use PDOException;
 
 class DataBase{
     private \PDO|null $pdo=null;
 
     public function connexionDB():void{
-        $this->pdo=new \PDO("mysql:dbname=gestion_inscription;host=127.0.0.1","castp5","castp5");
+        try {
+            $this->pdo=new \PDO("mysql:dbname=gestion_inscription;host=127.0.0.1","castp5","castp5");
+            //$this->pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            exit('Erreur de Connexion');
+        }
+        
+
         //die("Ca marche");
     }
     public function closeConnexion():void{

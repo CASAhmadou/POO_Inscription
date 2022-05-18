@@ -21,6 +21,13 @@ abstract class Personne extends Model{
         
     }
 
+    /*public static function findAll():array{      
+        $sql="select * from ? where role like ?";
+        return parent::findBy($sql,[parent::table(),self::$role]);
+       
+    }//id, `nom_complet`,`grade`,`role` */
+
+
   
     
 

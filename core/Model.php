@@ -11,7 +11,7 @@ abstract class Model implements IModel{
     public static function table():string{
         $table=get_called_class();
         $table=str_replace("App\\Model\\","",$table);
-        $table= ($table=="User" or $table=="AttacheClasse" or $table=="RPD" or $table=="Professeur")?"personne":strtolower($table);
+        $table= ($table=="User" or $table=="Etudiant" or $table=="AttacheClasse" or $table=="RPD" or $table=="Professeur")?"personne":strtolower($table);
         return $table;
     }
 
@@ -29,7 +29,7 @@ abstract class Model implements IModel{
     public static function delete(int $id):int{
         $db=self::dataBase();
         $db->connexionDB();
-            $sql="delete from ".self::table()." where id=?";
+            $sql="delete from '.self::table().' where id=?";
             $result=$db->executeUpdate($sql,[$id]);
         $db->closeConnexion();
       

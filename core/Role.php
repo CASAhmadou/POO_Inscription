@@ -9,12 +9,12 @@ class Role{
         $this->session=$session;
     }
 
-    public static function isConnect(){
-
+    public static function isConnect():bool{
+        return isset($session);
     }
 
     public static function isRPD(){
-
+        //return isConnect() && $session["role"]==ROLE_RPD;
     }
 
     public static function isAC(){

@@ -10,6 +10,8 @@ class ProfesseurController extends Controller{
     }
 
     public function listerProfesseur(){
-        
+        if($this->request->isGet()){
+            $this->render("professeur/liste-professeur.html.php");
+        }
     }
 }

@@ -10,7 +10,10 @@ class SecurityController extends Controller{
             $this->render("security/login.html.php");
         }
         //Traitement apres soumission => POST
-
+        if($this->request->isPost()){
+            //$user_connect
+            $this->render('security/login.html.php');
+        }
     }
 
     public function deconnexion(){

@@ -1,16 +1,28 @@
 <?php
 namespace App\Model;
+use App\Core\Model;
 
-class Demande{
+class Demande extends Model{
     private int $id;
     private string $motif;
     private string $etat;
     private string $date;
+
+    public function __construct()
+    {
+        
+    }
     
 
     public function inscriptions():Demande{
         return new Demande();
     }
+
+    public static function findAll():array{      
+        $sql="select * from demande";
+        return parent::findBy($sql,[]);
+    }
+
 
     /**
      * Get the value of id

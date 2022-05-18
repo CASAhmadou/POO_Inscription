@@ -6,7 +6,6 @@
             "App\\Controller\\": "controllers/",
             "App\\Exception\\": "exceptions",
             "App\\Model\\": "models/"
-
         }
     },
     "authors": [
@@ -15,5 +14,8 @@
             "email": "amalasakho92@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "nette/utils": "^3.2",
+        "symfony/validator": "^6.0"
+    }
 }

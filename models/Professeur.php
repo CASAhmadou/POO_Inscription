@@ -16,10 +16,9 @@ class Professeur extends Personne{
     }
    
     //Redefinition
-    public static function findAll():array{
-        
-            $sql="select id, `nom_complet`,`grade`,`role` from ? where role like 'ROLE_PROFESSEUR'";
-            return parent::findBy($sql,[parent::table()]);
+    public static function findAll():array{      
+        $sql="select * from ".parent::table()." where role like ?";
+        return parent::findBy($sql,[parent::$role]);
     }
 
     public function insert():int{

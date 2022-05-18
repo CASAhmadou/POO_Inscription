@@ -5,7 +5,6 @@ class Module{
     private int $id;
     private string $nomModule;
 
-
     
     /**
      * Get the value of id
