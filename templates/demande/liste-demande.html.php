@@ -7,7 +7,7 @@
 <div class="card ml-5">
     <img class="card-img-top" src="holder.js/100x180/" alt="">
     <div class="card-body">
-        <h4 class="card-title">Liste des Demandes</h4>
+        <h4 class="card-title">LISTE DES DEMANDES</h4>
         <p class="card-text">
         
           <table class="table">

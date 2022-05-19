@@ -1,5 +1,7 @@
 <?php
 namespace App\Controller;
+use App\Core\Model;
+use App\Model\User;
 use App\Core\Controller;
 
 class SecurityController extends Controller{
@@ -11,8 +13,16 @@ class SecurityController extends Controller{
         }
         //Traitement apres soumission => POST
         if($this->request->isPost()){
-            //$user_connect
-            $this->render('security/login.html.php');
+          $userConnect=User::findUserByLoginAndPassword($_POST["login"],$_POST["password"]);
+          //dd($userConnect);
+          if($userConnect!=NULL){
+              $this->session->addsession("user",$userConnect);
+              //dd($_SESSION['user']);
+
+          }else{
+            dd("login ou mot de passe incorrect");
+          }
+            
         }
     }
 

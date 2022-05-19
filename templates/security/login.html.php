@@ -1,25 +1,3 @@
-<?php
-  session_start();
-  $login=$_POST["login"];
-  
-  $password=$_POST["password"];
-  $submit=["submit"];
-  $erreur="";
-  if(isset($submit)){
-    include('DataBase.php');
-    $cle=$this->pdo->prepare("select * from personne where login=? and password=? limit 1");
-    $cle->execute(array($login,$password));
-    $tab=$cle->fetchAll();
-    if(count($tab)>0){
-      $_SESSION["nomComplet"]=ucfirst(strtolower($tab[0]["nom_complet"]));
-      $_SESSION["authentification"]="oui";
-      header("location:login.html.php");
-      //dd($_SESSION);
-    }else{
-      $erreur="Dugalo lu bakh";
-    }
-  }
-?>
 
 <div class="container-fluid mt-5">
 

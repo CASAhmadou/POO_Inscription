@@ -28,7 +28,7 @@ class Classe extends Model{
         $db->connexionDB();
             $sql="INSERT INTO `classe` (`libelle`,`niveau`,`filliere`,`rpd_id`) VALUES (?,?,?,?)";
             //die("Ca marche");
-            $result=$db->executeUpdate($sql,[$this->libelle, $this->niveau,$this->filliere,$this->rpd_id]);
+            $result=$db->executeUpdate($sql,[$this->libelle, $this->niveau,$this->filliere,$_SESSION["user"]->id]);
         $db->closeConnexion();
         return $result;
     }

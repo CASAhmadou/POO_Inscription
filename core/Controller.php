@@ -3,11 +3,13 @@ namespace App\Core;
 
 class Controller{
     protected Request $request;
-    
+    protected Session $session;
     //Injection de la Request dans le controller
     public function __construct(Request $request)
     {
         $this->request=$request;
+        $this->session=new Session();
+
     }
 
     public function render(string $path,array $data=[]){

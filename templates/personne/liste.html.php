@@ -1,7 +1,7 @@
 <div class="card ml-5">
     <img class="card-img-top" src="holder.js/100x180/" alt="">
     <div class="card-body">
-        <h4 class="card-title">Liste des Utilisateurs</h4>
+        <h4 class="card-title">LISTE DES UTILISATEURS</h4>
         <p class="card-text">
         
           <table class="table">

@@ -32,9 +32,3 @@ try{
     echo $ex->message;
 }
 
-/*$et=new Classe();
-$et->setLibelle("Amala Sakho");
-$et->setNiveau("L1");
-$et->setFilliere("Informatique");
-//$et->setRpd_id('29');
-$et->insert();*/

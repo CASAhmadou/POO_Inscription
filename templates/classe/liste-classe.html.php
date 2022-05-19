@@ -8,7 +8,7 @@ namespace App\Core;
 <div class="card ml-5">
     <img class="card-img-top" src="holder.js/100x180/" alt="">
     <div class="card-body">
-        <h4 class="card-title">Liste des Classes</h4>
+        <h4 class="card-title">LISTE DES CLASSES</h4>
         <p class="card-text">
         
           <table class="table">
@@ -25,6 +25,7 @@ namespace App\Core;
                   <td><?= $classe->libelle ?></td>
                   <td><?= $classe->niveau ?></td>
                   <td><?= $classe->filliere ?></td>
+                  
                 </tr>
                 <?php endforeach ?>
             </tbody>
