@@ -1,0 +1,15 @@
+
+:root{
+    --color-one: #273B60;
+    --color-two: #009BC3;
+}
+body{
+    background-color: var(--color-one);
+}
+.c{
+color: var(--color-two);;
+}
+
+li a:hover{
+    color: var(--color-two);
+}

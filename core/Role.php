@@ -28,4 +28,24 @@ class Role{
     public static function isProfesseur(){
 
     }
+
+    /**
+     * Get the value of session
+     */ 
+    public function getSession()
+    {
+        return $this->session;
+    }
+
+    /**
+     * Set the value of session
+     *
+     * @return  self
+     */ 
+    public function setSession($session)
+    {
+        $this->session = $session;
+
+        return $this;
+    }
 }

@@ -16,15 +16,21 @@ class Controller{
         $data["Constantes"]=Constantes::class;
         $data["request"]=$this->request;
 
-        ob_start();
-        extract($data);
-        require_once(Constantes::ROOT()."templates/".$path);
-        $content_for_views=ob_get_clean();
-        require_once(Constantes::ROOT()."templates/layout/base.html.php");
-
+        
+        
+        if(isset($_SESSION["user"])){
+            ob_start();
+            extract($data);
+            require_once(Constantes::ROOT()."templates/".$path);
+            $content_for_views=ob_get_clean();
+            require_once(Constantes::ROOT()."templates/layout/base.html.php");
+            
+        }else{
+            require_once(Constantes::ROOT()."templates/".$path);
+       }
     }
 
-    public function redirectToRoot($uri){
+    public static function redirectToRoot($uri){
         header("location:".Constantes::WEB_ROOT.$uri);
     }
 }

@@ -1,10 +1,20 @@
 <?php
 namespace App\Model;
+use App\Core\Model;
 
-class Module{
+class Module extends Model{
     private int $id;
     private string $nomModule;
 
+    public function __construct()
+    {
+        
+    }
+
+    public static function findAll():array{      
+        $sql="select * from module";
+        return parent::findBy($sql,[]);
+    }
     
     /**
      * Get the value of id

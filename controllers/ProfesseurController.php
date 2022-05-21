@@ -14,4 +14,11 @@ class ProfesseurController extends Controller{
             $this->render("professeur/liste-professeur.html.php");
         }
     }
+
+    public function creerProfesseur(){
+        if($this->request->isGet()){
+            //dd($_POST);
+            $this->render("professeur/add-professeur.html.php");
+        }
+    }
 }

@@ -17,16 +17,18 @@ class SecurityController extends Controller{
           //dd($userConnect);
           if($userConnect!=NULL){
               $this->session->addsession("user",$userConnect);
-              //dd($_SESSION['user']);
-
-          }else{
-            dd("login ou mot de passe incorrect");
+              $Role=$this->session->getsession("user")->role;
+              $_SESSION["role"] = $Role;
+                $this->render("user/accueil.html.php");
+              }else{
+                $this->render("security/login.html.php");
           }
             
         }
     }
 
     public function deconnexion(){
+      session_unset();
         $this->redirectToRoot("login");
     }
 }

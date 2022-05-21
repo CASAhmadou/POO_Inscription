@@ -1,5 +1,4 @@
 <?php
-namespace App\Core;
   use App\Model\Classe;
   $cl = new Classe();
   $classes = $cl->findAll();
