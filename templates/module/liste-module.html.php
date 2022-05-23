@@ -10,18 +10,31 @@
         <h4 class="card-title">LISTE DES MODULES</h4>
         <p class="card-text">
         
+          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <i class="fa-solid fa-plus"></i>
+            <button class="btn btn-primary me-md-2" type="button">Nouveau Module</button>
+          </div>
+
           <table class="table">
             <thead>
               <tr>
                 <th scope="col">Nom Module</th>
-                <th scope="col">Responsable</th>
+                <th scope="col">Actions</th>
               </tr> 
             </thead>
             <tbody>
               <?php foreach ($modules as $module): ?>
                 <tr>
                     <td><?= $module->nom_module ?></td>
-                    <td><?= $module->rpd_id ?></td>
+                    <td>
+                      <button type="button" class="btn btn-outline-primary">
+                        <i class="fa-solid fa-person-chalkboard"></i>
+                      </button>
+                      <button type="button" class="btn btn-outline-primary">
+                        <i class="fa-solid fa-trash-can"></i>
+                      </button>
+                    </td>
+
                 </tr>
               <?php endforeach ?>
             </tbody>

@@ -28,6 +28,10 @@ $router->route('/lister-etudiants',[EtudiantController::class,"listerEtudiant"])
 $router->route('/lister-modules',[ModuleController::class,"listerModule"]);
 $router->route('/add-professeur',[ProfesseurController::class,"creerProfesseur"]);
 $router->route('/accueil',[UserController::class,"accueil"]);
+$router->route('/inscription',[EtudiantController::class,"createEtudiant"]);
+$router->route('/demande',[DemandeController::class,"creerDemande"]);
+$router->route('/traitement-demande',[DemandeController::class,"traitementDemande"]);
+$router->route('/add-classe',[ClasseController::class,"creerClasse"]);
 
 try{
     //Essaie de Resoudre la route
@@ -37,4 +41,6 @@ try{
     echo $ex->message;
 }
 
-
+// $et= new Etudiant();
+// $et->setNomComplet('Aminata Ba');
+// $et->set

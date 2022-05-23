@@ -11,6 +11,6 @@ class ClasseController extends Controller{
     }
 
     public function creerClasse(){
-        echo ('Creer moi');
+        $this->render("classe/add-classe.html.php");
     }
 }

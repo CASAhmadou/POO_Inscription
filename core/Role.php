@@ -1,6 +1,7 @@
 <?php
 namespace App\Core;
 
+
 class Role{
     private Session $session;
 
@@ -14,7 +15,7 @@ class Role{
     }
 
     public static function isRPD(){
-        //return isConnect() && $session["role"]==ROLE_RPD;
+        return self::isConnect() && $_SESSION["role"]=="ROLE_RPD";
     }
 
     public static function isAC(){

@@ -18,11 +18,11 @@ class Demande extends Model{
         return new Demande();
     }
 
-    public static function findAll():array{      
-        $sql="select * from demande";
+    public static function findAll():array{
+        $sql="select d.*, p.nom_complet from demande d, personne p
+        where d.etudiant_id=p.id";    
         return parent::findBy($sql,[]);
     }
-
 
     /**
      * Get the value of id

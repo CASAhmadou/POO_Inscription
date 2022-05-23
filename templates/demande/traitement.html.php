@@ -13,7 +13,7 @@
           <table class="table">
             <thead>
               <tr>
-                <th scope="col">Eudiant</th>
+                <th scope="col">N° Eudiant</th>
                 <th scope="col">Motif</th>
                 <th scope="col">Etat</th>
               </tr>
@@ -23,7 +23,12 @@
               <tr>
                   <td><?= $demande->nom_complet ?></td>
                   <td><?= $demande->motif ?></td>
-                  <td><?= $demande->etat ?></td>
+                  <td>
+                    <select id="inputState" class="form-select">
+                      <option selected>Accepte</option>
+                      <option>Non Valide</option>
+                    </select>
+                  </td>
                 </tr>
                 <?php endforeach ?>
             </tbody>

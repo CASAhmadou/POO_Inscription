@@ -12,6 +12,14 @@ class DemandeController extends Controller{
     }
 
     public function creerDemande(){
+        if($this->request->isGet()){
+            $this->render("demande/demande.html.php");
+        }
+    }
 
+    public function traitementDemande(){
+        if($this->request->isGet()){
+            $this->render("demande/traitement.html.php");
+        }
     }
 }

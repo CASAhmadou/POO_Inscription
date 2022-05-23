@@ -14,7 +14,7 @@ use App\Core\Constantes;
         <title>Document</title>
     </head>
     <body> 
-<div class="container-fluid d-flex justify-content-center mt-5">
+<div class="container-fluid col-3 mt-5">
 
   <div class="card">
     <div class="card-body">

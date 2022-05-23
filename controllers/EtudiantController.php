@@ -6,7 +6,7 @@ use App\Core\Controller;
 class EtudiantController extends Controller{
     
     public function createEtudiant(){
-
+        $this->render("inscription/formulaire.html.php");
     }
 
     public function ListerEtudiant(){
