@@ -47,8 +47,8 @@ abstract class Model implements IModel{
     public static function findById(int $id):object|null{
         $db=self::dataBase();
         $db->connexionDB();
-            $sql="select * from '.self::table().'where id=?";
-        $result=$db->executeSelect($sql,[$id]);
+            $sql="select * from ".self::table()." where id=?";
+        $result=$db->executeSelect($sql,[$id],true);
         $db->closeConnexion();
 
         return $result;

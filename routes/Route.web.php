@@ -21,17 +21,19 @@ $router->route('/login',[SecurityController::class,"authentification"]);
 $router->route('/logout',[SecurityController::class,"deconnexion"]);
 $router->route('/lister-classes',[ClasseController::class,"listerClasse"]);
 $router->route('/add-classe',[ClasseController::class,"creerClasse"]);
-$router->route('/lister-personnes',[PersonneController::class,"lister"]);
-$router->route('/lister-professeurs',[ProfesseurController::class,"listerProfesseur"]);
-$router->route('/lister-demandes',[DemandeController::class,"listerDemande"]);
-$router->route('/lister-etudiants',[EtudiantController::class,"listerEtudiant"]);
-$router->route('/lister-modules',[ModuleController::class,"listerModule"]);
-$router->route('/add-professeur',[ProfesseurController::class,"creerProfesseur"]);
-$router->route('/accueil',[UserController::class,"accueil"]);
-$router->route('/inscription',[EtudiantController::class,"createEtudiant"]);
+$router->route('/edit-classe',[ClasseController::class,"editClasse"]);
+$router->route('/delete-classe',[ClasseController::class,"deleteClasse"]);
 $router->route('/demande',[DemandeController::class,"creerDemande"]);
 $router->route('/traitement-demande',[DemandeController::class,"traitementDemande"]);
-$router->route('/add-classe',[ClasseController::class,"creerClasse"]);
+$router->route('/lister-demandes',[DemandeController::class,"listerDemande"]);
+$router->route('/lister-etudiants',[EtudiantController::class,"listerEtudiant"]);
+$router->route('/inscription',[EtudiantController::class,"createEtudiant"]);
+$router->route('/lister-modules',[ModuleController::class,"listerModule"]);
+$router->route('/lister-personnes',[PersonneController::class,"lister"]);
+$router->route('/lister-professeurs',[ProfesseurController::class,"listerProfesseur"]);
+$router->route('/add-professeur',[ProfesseurController::class,"creerProfesseur"]);
+$router->route('/accueil',[UserController::class,"accueil"]);
+$router->route('/classes-professeur',[ProfesseurController::class,"affecterClasse"]);
 
 try{
     //Essaie de Resoudre la route

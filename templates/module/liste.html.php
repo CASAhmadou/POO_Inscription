@@ -12,7 +12,7 @@
         
           <div class="d-grid gap-2 d-md-flex justify-content-md-end">
             <i class="fa-solid fa-plus"></i>
-            <button class="btn btn-primary me-md-2" type="button">Nouveau Module</button>
+            <button class="btn btn-primary me-md-2" type="button">Nouveau</button>
           </div>
 
           <table class="table">

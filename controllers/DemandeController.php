@@ -7,7 +7,7 @@ class DemandeController extends Controller{
     
     public function listerDemande(){
         if($this->request->isGet()){
-            $this->render("demande/liste-demande.html.php");
+            $this->render("demande/liste.html.php");
         }
     }
 

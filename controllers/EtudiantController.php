@@ -11,7 +11,7 @@ class EtudiantController extends Controller{
 
     public function ListerEtudiant(){
         if($this->request->isGet()){
-            $this->render("etudiant/liste-etudiant.html.php");
+            $this->render("etudiant/liste.html.php");
         }
     }
 }

@@ -16,8 +16,6 @@ class Controller{
         $data["Constantes"]=Constantes::class;
         $data["request"]=$this->request;
 
-        
-        
         if(isset($_SESSION["user"])){
             ob_start();
             extract($data);

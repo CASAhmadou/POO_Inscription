@@ -14,7 +14,7 @@ use App\Model\Classe;
             <a href="<?= Constantes::WEB_ROOT."add-classe"?>">
               <i class="fa-solid fa-plus"></i>
             </a>
-            <button class="btn btn-primary me-md-2" type="button">Ajouuter Nouvelle Classe</button>
+            <button class="btn btn-primary me-md-2" type="button">Nouvelle</button>
           </div>
         
           <table class="table">
@@ -33,12 +33,21 @@ use App\Model\Classe;
                   <td><?= $classe->niveau ?></td>
                   <td><?= $classe->filliere ?></td>
                   <td>
+                    <a href="<?= Constantes::WEB_ROOT."edit-classe/$classe->id"?>">
+                      <button type="button" class="btn btn-outline-primary">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                      </button>
+                    </a>
+
                     <button type="button" class="btn btn-outline-primary">
                       <i class="fa-solid fa-person-chalkboard"></i>
                     </button>
-                    <button type="button" class="btn btn-outline-primary">
-                    <i class="fa-solid fa-trash-can"></i>
-                    </button>
+                    
+                    <a href="<?= Constantes::WEB_ROOT."delete-classe"?>">
+                      <button type="button" class="btn btn-outline-primary">
+                        <i class="fa-solid fa-trash-can"></i>
+                      </button>
+                    </a>
                   </td>
                 </tr>
                 <?php endforeach ?>

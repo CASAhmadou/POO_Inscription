@@ -10,7 +10,7 @@ class ModuleController extends Controller{
 
     public function listerModule(){
         if($this->request->isGet()){
-            $this->render("module/liste-module.html.php");
+            $this->render("module/liste.html.php");
         }
     }
     

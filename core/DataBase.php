@@ -14,9 +14,6 @@ class DataBase{
             echo $e->getMessage();
             exit('Erreur de Connexion');
         }
-        
-
-        //die("Ca marche");
     }
     public function closeConnexion():void{
         $this->pdo=null;
@@ -35,6 +32,7 @@ class DataBase{
     public function executeUpdate(string $sql,array $data=[]):int{
         $query=$this->pdo->prepare($sql);
         $query->execute($data);
-        return $query->rowCount();
+        $query->rowCount();
+       return $this->pdo->lastInsertId();
     }
 }

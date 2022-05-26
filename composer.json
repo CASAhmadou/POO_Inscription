@@ -16,6 +16,7 @@
     ],
     "require": {
         "nette/utils": "^3.2",
-        "symfony/validator": "^6.0"
+        "symfony/validator": "^6.0",
+        "ircmaxell/password-compat": "^1.0"
     }
 }

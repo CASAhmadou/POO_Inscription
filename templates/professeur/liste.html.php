@@ -1,7 +1,6 @@
 <?php
-
-use App\Core\Constantes;
-use App\Model\Professeur;
+  use App\Core\Constantes;
+  use App\Model\Professeur;
   $prof = new Professeur();
   $professeurs = $prof->findAll();
 ?>
@@ -14,7 +13,7 @@ use App\Model\Professeur;
           <a href="<?= Constantes::WEB_ROOT."add-professeur"?>">
             <i class="fa-solid fa-plus"></i>
             </a>
-          <button class="btn btn-primary me-md-2" type="button">Ajouuter Nouveau Professeur</button>
+          <button class="btn btn-primary me-md-2" type="button">Nouveau</button>
         </div>
         
         <table class="table">
@@ -32,7 +31,9 @@ use App\Model\Professeur;
               <td><?= $personne->grade ?></td>
               <td>
                 <button class="btn btn-outline-success" type="submit">
-                <i class="fa-solid fa-school icon"></i>
+                  <a href="<?= Constantes::WEB_ROOT."classes-professeur"?>">
+                    <i class="fa-solid fa-school icon"></i>
+                  </a>
                 </button>
                 <button class="btn btn-outline-success" type="submit">
                   <i class="fa-solid fa-file-circle-plus icon"></i>

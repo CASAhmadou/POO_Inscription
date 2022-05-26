@@ -33,6 +33,22 @@ class Classe extends Model{
         return $result;
     }
 
+    public function update():int{
+        $db=parent::dataBase();
+        $db->connexionDB();
+        $sql="UPDATE `classe` SET `libelle`=?,`niveau`=?,`filliere`=? WHERE id=?";
+        $result=$db->executeUpdate($sql,[$this->libelle, $this->niveau,$this->filliere,$this->id]);
+        $db->closeConnexion();
+        return $result;
+    }
+
+    public function deleteClasse():array|null{
+        $sql="select...";
+        return parent::findBy($sql,[$this->id]);
+    }
+
+    
+
 
 
 
