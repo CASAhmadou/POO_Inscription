@@ -14,27 +14,35 @@ use App\Core\Constantes;
         <title>Document</title>
     </head>
     <body> 
-<div class="container-fluid col-3 mt-5">
+      <div class="container-fluid d-flex justify-content-center mt-5">
+        
+        <div class="cardflex-row d-inline-flex ">
+          <img class="img-fluid col-3"src="<?=Constantes::WEB_ROOT.'images/manstudent.png'?>" alt="">
+          
+          <div class="card-body col-6 m-5">
+            <h4 class="card-title">Formulaire de Connexion</h4>
+            <p class="card-text">
+              <form name="form" method="post" action="">
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                    <input type="email" name="login" class="form-control col-4" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+                  </div>
+                  <button type="submit" name="submit" style="width: 10rem" class="text-center btn btn-info m-5 py-3">Connecter</button>
+                </form>
+            </p>
+          </div>
+        
+          <img class=" img-fluid col-3" src="<?=Constantes::WEB_ROOT.'images/girlstudent.png'?>" alt="">
+        </div>
+      </div>
+    
+      <h1 class="text-uppercase text-center">Sonatel Academy</h1>
+      <h2 class="text-center">Coding for better life!</h2>
 
-  <div class="card">
-    <div class="card-body">
-      <h4 class="card-title">Formulaire de Connexion</h4>
-      <p class="card-text ml-3">
-        <form name="form" method="post" action="">
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Email address</label>
-              <input type="email" name="login" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label">Password</label>
-              <input type="password" name="password" class="form-control" id="exampleInputPassword1">
-            </div>
-            <button type="submit" name="submit" class="btn btn-primary">Submit</button>
-        </form>
-      </p>
-    </div>
-  </div>
-</div>
 
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>

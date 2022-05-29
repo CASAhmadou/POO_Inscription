@@ -24,7 +24,7 @@ use App\Core\Constantes;
             <label for="grade" class="form-label">Filliere</label>
             <input type="texte" name="filliere" class="form-control" value="<?=isset($classe->filliere)?$classe->filliere:""?>" id="exampleInputPassword1">
           </div>
-          <button type="submit" name="submit" class="btn btn-primary" value="">Submit</button>
+          <button type="submit" name="submit" class="text-light btn btn-info" value="">Submit</button>
       </form>
     </p>
   </div

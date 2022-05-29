@@ -1,4 +1,4 @@
-<h2>Bienvenue à l'Université C A S</h2>
+<h2 class="text-uppercase text-center">Bienvenue à la Sonatel Academy</h2>
 
 
 <div class="chart-container">

@@ -1,7 +1,7 @@
 <?php
 
-use App\Core\Constantes;
-use App\Model\Professeur;
+  use App\Core\Constantes;
+  use App\Model\Professeur;
   use App\Model\Classe;
   use App\Model\ClasseProfesseur;
 
@@ -16,7 +16,7 @@ use App\Model\Professeur;
 
 <div class="card ml-5">
     <div class="card-body">
-        <h4 class="card-title">LISTE des Classes du PROFESSEUR <?= $clprofs[0]->nom_complet?>
+        <h4 class="card-title">LISTE des Classes du PROFESSEUR <?= $professeurs[0]->nom_complet?>
          
         </h4>
         <p class="card-text">

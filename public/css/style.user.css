@@ -19,7 +19,6 @@ li a:hover{
 .containt{
     display: flex;
     justify-content: space-between;
-    background-color: #ffc107;
 }
 .icon{
     padding: 2%;

@@ -42,10 +42,10 @@ class Classe extends Model{
         return $result;
     }
 
-    public function deleteClasse():array|null{
+   /* public function deleteClasse():array|null{
         $sql="select...";
         return parent::findBy($sql,[$this->id]);
-    }
+    }*/
 
     
 

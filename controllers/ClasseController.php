@@ -58,7 +58,18 @@ class ClasseController extends Controller{
     
     public function deleteClasse(){
         if($this->request->isGet()){
-            $this->render("classe/add.html.php");
+            $this->render("classe/liste.html.php");
+        }
+
+        if($this->request->isPost()){
+            $idSup=(int) $_POST['id'];
+            $result = Classe::delete($idSup);
+            if($result>0){
+                $this->render("classe/liste.html.php");
+                echo ('Suppression reussie');
+            }else{
+                $this->render("classe/liste.html.php");
+            }
         }
     }
 }

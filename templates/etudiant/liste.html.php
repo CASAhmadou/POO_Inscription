@@ -17,7 +17,7 @@ use App\Model\Etudiant;
               </button>
             </a>
           </div>
-          <table class="table"">
+          <table class="table table-striped table-bordered table-hover text-center">
             <thead>
               <tr>
                 <th scope="col">Matricule</th>
@@ -34,7 +34,7 @@ use App\Model\Etudiant;
                   <td><?= $personne->nom_complet ?></td>
                   <td><?= $personne->sexe ?></td>
                   <td><?= $personne->adresse ?></td>
-                  <td>
+                  <td class="d-flex justify-content-around align-self-center">
                     <button type="button" class="btn btn-outline-primary">
                       <a href="<?=Constantes::WEB_ROOT,"inscription"?>">
                         Réinscription

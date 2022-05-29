@@ -29,7 +29,7 @@ abstract class Model implements IModel{
     public static function delete(int $id):int{
         $db=self::dataBase();
         $db->connexionDB();
-            $sql="delete from '.self::table().' where id=?";
+            $sql="delete from ".self::table()." where id=?";
             $result=$db->executeUpdate($sql,[$id]);
         $db->closeConnexion();
       

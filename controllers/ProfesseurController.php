@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Controller;
-
 use App\Core\Controller;
 use App\Model\ClasseProfesseur;
 use App\Model\Professeur;
@@ -17,7 +15,7 @@ class ProfesseurController extends Controller
         if ($this->request->isPost()) {
             $this->render("professeur/liste.html.php");
         }
-    }
+    }   
 
     public function listerProfesseur()
     {
@@ -29,7 +27,6 @@ class ProfesseurController extends Controller
     public function creerProfesseur()
     {
         if ($this->request->isGet()) {
-            //dd($_POST);
             $this->render("professeur/add.html.php");
         }
 

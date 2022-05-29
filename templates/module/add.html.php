@@ -17,7 +17,7 @@
             <label for="grade" class="form-label">Grade</label>
             <input type="texte" name="grade" class="form-control" id="exampleInputPassword1">
           </div>
-          <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" name="submit" class="text-light btn btn-info">Submit</button>
       </form>
     </p>
   </div>

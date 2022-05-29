@@ -14,10 +14,10 @@ use App\Model\Classe;
             <a href="<?= Constantes::WEB_ROOT."add-classe"?>">
               <i class="fa-solid fa-plus"></i>
             </a>
-            <button class="btn btn-primary me-md-2" type="button">Nouvelle</button>
+            <button class="text-light btn btn-info me-md-2" type="button">Nouvelle</button>
           </div>
         
-          <table class="table">
+          <table class="table table-striped table-bordered table-hover text-center">
             <thead>
               <tr>
                 <th scope="col">Libelle</th>
@@ -32,22 +32,23 @@ use App\Model\Classe;
                   <td><?= $classe->libelle ?></td>
                   <td><?= $classe->niveau ?></td>
                   <td><?= $classe->filliere ?></td>
-                  <td>
+                  <td class="d-flex justify-content-around align-self-center">
                     <a href="<?= Constantes::WEB_ROOT."edit-classe/$classe->id"?>">
-                      <button type="button" class="btn btn-outline-primary">
+                      <button type="button" class="btn btn-outline-info">
                         <i class="fa-solid fa-pen-to-square"></i>
                       </button>
                     </a>
 
-                    <button type="button" class="btn btn-outline-primary">
+                    <button type="button" class="btn btn-outline-info">
                       <i class="fa-solid fa-person-chalkboard"></i>
                     </button>
                     
-                    <a href="<?= Constantes::WEB_ROOT."delete-classe"?>">
-                      <button type="button" class="btn btn-outline-primary">
+                    <form action="<?= Constantes::WEB_ROOT."delete-classe"?>" method="POST">
+                      <button type="submit" class="btn btn-outline-info">
+                        <input type="hidden" name="id" value="<?= $classe->id?>">
                         <i class="fa-solid fa-trash-can"></i>
                       </button>
-                    </a>
+                    </form>
                   </td>
                 </tr>
                 <?php endforeach ?>

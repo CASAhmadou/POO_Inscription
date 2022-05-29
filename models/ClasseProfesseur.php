@@ -1,6 +1,7 @@
 <?php
 namespace App\Model;
 use App\Core\Model;
+use ArrayAccess;
 
 class ClasseProfesseur extends Model{
     private int $id;
@@ -34,8 +35,8 @@ class ClasseProfesseur extends Model{
     public static function classes(int $id)
     {
         $sql= "select c.libelle,p.nom_complet from classe c,personne p,professeur_classe pc
-        where pc.classe_id=c.id and pc.professeur_id=p.id and p.id=$id"; 
-        return parent::findBy($sql,[]);
+        where pc.classe_id=c.id and pc.professeur_id=p.id and p.id=?"; 
+        return parent::findBy($sql,[$id]);
     }
     /**
      * Get the value of classe

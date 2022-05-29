@@ -1,10 +1,5 @@
 <?php
 use App\Core\Constantes;
-use App\Core\Role;
-
-/*if($_SESSION["role"] == "ROLE_RPD"): ?>
-    <?php endif;?>*/
-    // dd(Role::isConnect());
 ?>
 
 <!DOCTYPE html>
@@ -19,69 +14,150 @@ use App\Core\Role;
         <title>Document</title>
     </head>
     <body>
-       
-        <div class="containt m-3 mt-5">
+        <!-- Menu -->
+        <div class="containt bg-info sticky-top">
           <form class="d-flex mr-1" style="height: 20%" role="search">
             <input class="form-control me-2" type="search" placeholder="Recherche" aria-label="Recherche">
-            <button class="btn btn-outline-success" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <button class="text-light btn btn-outline-success" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
           </form>
+
+          
           <ul class="nav nav-pills justify-content-end">
         
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="<?=Constantes::WEB_ROOT."accueil"?>">Accueil</a>
+              <a class="text-light nav-link" aria-current="page" href="<?=Constantes::WEB_ROOT."accueil"?>">Accueil</a>
             </li>
 
             <?php if($_SESSION["role"] =="ROLE_ATTACHE"): ?>
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="<?=Constantes::WEB_ROOT."lister-etudiants"?>">Inscription</a>
+                <a class="text-light nav-link" aria-current="page" href="<?=Constantes::WEB_ROOT."lister-etudiants"?>">Inscription</a>
               </li>
             <?php endif;?>
 
             <?php if($_SESSION["role"] =="ROLE_RPD"): ?>
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="<?=Constantes::WEB_ROOT."lister-professeurs"?>">Professeurs</a>
+                <a class="text-light nav-link" aria-current="page" href="<?=Constantes::WEB_ROOT."lister-professeurs"?>">Professeurs</a>
               </li>
             <?php endif;?>
 
             <?php if($_SESSION["role"] =="ROLE_RPD"): ?>
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="<?=Constantes::WEB_ROOT."lister-classes"?>">Classes</a>
+                <a class="text-light nav-link" aria-current="page" href="<?=Constantes::WEB_ROOT."lister-classes"?>">Classes</a>
               </li>
             <?php endif;?>
 
             <?php if($_SESSION["role"] =="ROLE_RPD"): ?>
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="<?=Constantes::WEB_ROOT."lister-modules"?>">Modules</a>   
+                <a class="text-light nav-link" aria-current="page" href="<?=Constantes::WEB_ROOT."lister-modules"?>">Modules</a>   
               </li>
             <?php endif;?>
 
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Demande Etudiants</a>
-              <ul class="dropdown-menu">
+              <a class="text-light nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Demande Etudiants</a>
+              <ul class="bg-info dropdown-menu">
                 
                 <?php if($_SESSION["role"] =="ROLE_ATTACHE"): ?>
                   <li><a class="dropdown-item" href="<?=Constantes::WEB_ROOT."demande"?>"">Formulaire Demande</a></li>
                   <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="<?=Constantes::WEB_ROOT."lister-demandes"?>">Liste Demandes</a>
+                  <li><a class="text-light dropdown-item" href="<?=Constantes::WEB_ROOT."lister-demandes"?>">Liste Demandes</a>
                 <?php endif;?>
 
                 <?php if($_SESSION["role"] =="ROLE_ETUDIANT"): ?>
-                  <li><a class="dropdown-item" href="<?=Constantes::WEB_ROOT."lister-demandes"?>">Liste mes Demandes</a>
+                  <li><a class="text-light dropdown-item" href="<?=Constantes::WEB_ROOT."lister-demandes"?>">Liste mes Demandes</a>
                 <?php endif;?>
 
                 <?php if($_SESSION["role"] =="ROLE_RPD"): ?>
-                  <li><a class="dropdown-item" href="<?=Constantes::WEB_ROOT."traitement-demande"?>"">Demande à Traiter</a></li>
+                  <li><a class="text-light dropdown-item" href="<?=Constantes::WEB_ROOT."traitement-demande"?>"">Demande à Traiter</a></li>
                 <?php endif;?>
               </ul>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="<?=Constantes::WEB_ROOT."logout"?>">Deconnexion</a>
+              <a class="text-light nav-link" href="<?=Constantes::WEB_ROOT."logout"?>">Deconnexion</a>
             </li>
         </ul>
         </div>
-        <div class="container col-8">
-        <?=$content_for_views?>
+
+
+          <!-- offcanvas navbar-->
+          <nav class="navbar navbar-light bg-light col-4">
+
+            <div class="container-fluid">
+              <button class="bg-info navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="offcanvas bg-info offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+               <!--<h5 class="offcanvas-title" id="offcanvasNavbarLabel">Université C A S</h5>-->
+               <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+               <div class="offcanvas-header">
+                 <form class="d-flex">
+                   <input class="form-control me-2" type="search" placeholder="Search" aria-label="Recherche">
+                   <button class="text-light btn btn-outline-success" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                  </form>
+                </div>
+                <div class="offcanvas-body">
+                  <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    
+                    <li class="nav-item">
+                      <a class="text-light nav-link active" aria-current="page" href="<?=Constantes::WEB_ROOT."accueil"?>">Accueil</a>
+                    </li>
+                    <li>
+                          <hr class="dropdown-divider">
+                        </li>
+                    <li class="nav-item">
+                      <a class="text-light nav-link" href="<?=Constantes::WEB_ROOT."lister-etudiants"?>">Inscription</a>
+                    </li>
+                    <li>
+                          <hr class="dropdown-divider">
+                    </li>
+                    <li class="nav-item">
+                      <a class="text-light nav-link" href="<?=Constantes::WEB_ROOT."lister-professeurs"?>">Professeurs</a>
+                    </li>
+                    <li>
+                          <hr class="dropdown-divider">
+                    </li>
+                    <li class="nav-item">
+                      <a class="text-light nav-link" href="<?=Constantes::WEB_ROOT."lister-classes"?>">Classes</a>
+                    </li>
+                    <li>
+                          <hr class="dropdown-divider">
+                        </li>
+                    <li class="nav-item">
+                      <a class="text-light nav-link" href="<?=Constantes::WEB_ROOT."lister-modules"?>">Modules</a>
+                    </li>
+                    <li>
+                          <hr class="dropdown-divider">
+                        </li>
+                    <li class="nav-item dropdown">
+                      <a class="text-light nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Demande Etudiants
+                      </a>
+                      <ul class="dropdown-menu bg-info" aria-labelledby="offcanvasNavbarDropdown">
+                        <li><a class="text-light dropdown-item" href="<?=Constantes::WEB_ROOT."demande"?>">Formulaire Demande</a></li>
+                        <li>
+                          <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="text-light dropdown-item" href="<?=Constantes::WEB_ROOT."lister-demandes"?>">Liste Demandes</a></li>
+                        <li>
+                          <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="text-light dropdown-item" href="<?=Constantes::WEB_ROOT."lister-demandes"?>">Liste mes Demandes</a></li>
+                        <li>
+                          <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="text-light dropdown-item" href="<?=Constantes::WEB_ROOT."traitement-demande"?>">Demande à Traiter</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+
+                </div>
+              </div>
+            </div>
+          </nav>
+
+
+        <div class="container col-8 mt-5">
+          <?=$content_for_views?>
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
     <script src="https://kit.fontawesome.com/746ce6113a.js" crossorigin="anonymous"></script>

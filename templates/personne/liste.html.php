@@ -4,7 +4,7 @@
         <h4 class="card-title">LISTE DES UTILISATEURS</h4>
         <p class="card-text">
         
-          <table class="table">
+          <table class="table table-striped table-bordered table-hover">
             <thead>
               <tr>
                 <th scope="col">Numéro</th>

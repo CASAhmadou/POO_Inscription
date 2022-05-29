@@ -11,26 +11,26 @@
         <p class="card-text">
         
           <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-            <i class="fa-solid fa-plus"></i>
-            <button class="btn btn-primary me-md-2" type="button">Nouveau</button>
+            <i class="plus fa-solid fa-plus"></i>
+            <button class="text-light btn btn-info me-md-2" type="button">Nouveau</button>
           </div>
 
-          <table class="table">
+          <table class="table table-striped table-bordered table-hover">
             <thead>
               <tr>
                 <th scope="col">Nom Module</th>
                 <th scope="col">Actions</th>
               </tr> 
             </thead>
-            <tbody>
+            <tbody id="newTr">
               <?php foreach ($modules as $module): ?>
                 <tr>
-                    <td><?= $module->nom_module ?></td>
+                    <td class="module"><?= $module->nom_module ?></td>
                     <td>
-                      <button type="button" class="btn btn-outline-primary">
+                      <button type="button" class="btn btn-outline-info">
                         <i class="fa-solid fa-person-chalkboard"></i>
                       </button>
-                      <button type="button" class="btn btn-outline-primary">
+                      <button type="button" class="btn btn-outline-info">
                         <i class="fa-solid fa-trash-can"></i>
                       </button>
                     </td>

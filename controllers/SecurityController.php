@@ -29,6 +29,6 @@ class SecurityController extends Controller{
 
     public function deconnexion(){
       session_unset();
-        $this->redirectToRoot("login");
+        $this->redirectToRoot("");
     }
 }

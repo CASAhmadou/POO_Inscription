@@ -13,15 +13,15 @@
           <a href="<?= Constantes::WEB_ROOT."add-professeur"?>">
             <i class="fa-solid fa-plus"></i>
             </a>
-          <button class="btn btn-primary me-md-2" type="button">Nouveau</button>
+          <button class="text-light btn btn-info me-md-2" type="button">Nouveau</button>
         </div>
         
-        <table class="table">
+        <table class="table table-striped table-bordered table-hover text-center">
           <thead>
             <tr>
-              <th scope="col">Nom Complet</th>
-              <th scope="col">Grade</th>
-              <th scope="col">Actions</th>
+              <th class="col-4" scope="col">Nom Complet</th>
+              <th class="col-4" scope="col">Grade</th>
+              <th class="col-3" scope="col">Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -29,16 +29,16 @@
             <tr>
               <td><?= $personne->nom_complet ?></td>
               <td><?= $personne->grade ?></td>
-              <td>
-                <button class="btn btn-outline-success" type="submit">
-                  <a href="<?= Constantes::WEB_ROOT."classes-professeur"?>">
-                    <i class="fa-solid fa-school icon"></i>
-                  </a>
-                </button>
-                <button class="btn btn-outline-success" type="submit">
+              <td class="d-flex justify-content-around align-self-center">
+              <a href="<?= Constantes::WEB_ROOT."classes-professeur"?>">
+              <button class="btn btn-outline-info" type="submit">
+                <i class="fa-solid fa-school icon"></i>
+              </button>
+              </a>
+                <button class="btn btn-outline-info" type="submit">
                   <i class="fa-solid fa-file-circle-plus icon"></i>
                 </button>
-                <button class="btn btn-outline-success" type="submit">
+                <button class="btn btn-outline-info" type="submit">
                   <i class="fa-solid fa-user-xmark"></i>
                 </button>
               </td>
