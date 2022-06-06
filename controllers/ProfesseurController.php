@@ -31,6 +31,7 @@ class ProfesseurController extends Controller
         }
 
         if ($this->request->isPost()) {
+
             $prof = new Professeur();
             $prof->setNomComplet($_POST["nomComplet"]);
             $prof->setGrade($_POST["grade"]);
@@ -38,6 +39,7 @@ class ProfesseurController extends Controller
             $id_prof = $prof->insert();
             
             $clprof = new ClasseProfesseur();
+           
             foreach ($_POST["classe"] as $value) {
                 $clprof->setClasse($value);
                 $clprof->setProfesseur($id_prof);

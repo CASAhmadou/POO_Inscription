@@ -9,7 +9,7 @@
   $modules= $module->findAll();
 ?>
 
-<div class="container-fluid d-flex justify-content-center mt-5 row">
+<div class="container-fluid d-flex justify-content-center row">
   <div class="card">
     <div class="card-body">
       <h4 class="card-title">Ajouter Professeur</h4>
@@ -25,8 +25,10 @@
                 <input type="texte" name="grade" class="form-control" id="grade">
               </div>
             </div>
-
-            <div class="col-6">
+            
+        <img class="img-fluid col-6"src="<?=Constantes::WEB_ROOT.'images/teacher.png'?>" alt="">
+     
+        <div class="col-6">
               <div>
                 <label for="nomComplet" class="form-label">Affecter de(s) Classe(s)</label>
                 <select id="inputState" class="form-select">
@@ -43,7 +45,7 @@
                   <?php endforeach ?>
                 </select>
               </div>
-            </div>
+        </div>
               <!-- <main class="container col-8 row">
                 <h2> Liste des Classes</h2>
                 <?php foreach ($classes as $classe): ?>
@@ -54,9 +56,10 @@
                 <?php endforeach ?>
               </main> -->
                 
-              <button type="submit" name="submit" class="text-light btn btn-info col-4">Submit</button>
+              <button type="submit" name="submit" style="height:20%" class="text-light btn btn-info col-4">Submit</button>
           </form>
         </p>
+        
     </div>
   </div>
 </div>

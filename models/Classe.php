@@ -14,7 +14,7 @@ class Classe extends Model{
     }
 
     public static function findAll():array{      
-        $sql="select * from classe";
+        $sql="select * from classe ORDER BY `id` DESC";
         return parent::findBy($sql,[]);
     }
 

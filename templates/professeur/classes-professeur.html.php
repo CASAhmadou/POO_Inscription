@@ -16,7 +16,7 @@
 
 <div class="card ml-5">
     <div class="card-body">
-        <h4 class="card-title">LISTE des Classes du PROFESSEUR <?= $professeurs[0]->nom_complet?>
+        <h4 class="card-title">LISTE des Classes du PROFESSEUR <?= $clprof[0]->nom_complet?>
          
         </h4>
         <p class="card-text">

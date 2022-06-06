@@ -3,8 +3,8 @@
 ?>
 
 <div class="container-fluid d-flex justify-content-center mt-5">
-
-<div class="card">
+  
+  <div class="card">
   <div class="card-body">
     <h4 class="card-title">Ajouter Module</h4>
     <p class="card-text ml-3">
@@ -19,7 +19,7 @@
           </div>
           <button type="submit" name="submit" class="text-light btn btn-info">Submit</button>
       </form>
-    </p>
+      </p>
+    </div>
   </div>
-</div>
 </div>

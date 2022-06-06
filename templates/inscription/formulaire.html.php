@@ -1,5 +1,9 @@
+<?php 
+use App\Core\Constantes;
 
-<form class="" method="POST" action="inscription" >
+?>
+<div class="row">
+<form class="col-6" method="POST" action="inscription" >
   <div class="col-md-6">
     <label for="inputname" class="form-label">Nom Complet</label>
     <input type="text" class="form-control" id="inputname">
@@ -29,3 +33,5 @@
     <button type="submit" class="btn btn-primary">Envoyer</button>
   </div>
 </form>
+<img class="img-fluid col-6"src="<?=Constantes::WEB_ROOT.'images/students.png'?>" alt="">
+</div>
